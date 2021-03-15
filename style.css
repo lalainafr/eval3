@@ -61,5 +61,16 @@
 }
 
 #player1, #player2{
-  font-size: 1.2em;
+  font-size: 1em;
 }
+
+#diceColor{
+  color: rgb(168, 141, 136); 
+  font-size: 5rem;
+}
+
+#textDisplay{
+  color: rgba(217, 65, 42,0.6);
+  font-size: 0.8em;
+  
+} 
