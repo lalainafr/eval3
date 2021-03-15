@@ -39,10 +39,6 @@
   display: inline-block
 }
 
-.current{
-  font-size: 0.7rem;
-}
-
 #tour{
   color: rgba(217, 65, 42,0.6);}
 
@@ -61,6 +57,7 @@
   height: 80px;
   padding-top: 15px;
   color: black;
+  font-size: 0.7rem;
 }
 
 #player1, #player2{
