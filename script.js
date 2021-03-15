@@ -48,3 +48,20 @@ let game = new Game(['player1, player2'], 'p1')
 const winPoint = 100
 let roundNb = 0
 let globalNb = 0
+
+//Nouvelle partie
+newGameBtn.addEventListener('click',()=>{
+  player1.roundNb = 0
+  player2.roundNb = 0
+  player1.globalNb = 0
+  player2.globalNb = 0
+  p1GlobalScore.style.display = 'block'
+  p2GlobalScore.style.display = 'block'
+  p1RoundScore.style.display = 'block'
+  p2RoundScore.style.display = 'block'
+  rollDiceBtn.style.display = 'block'
+  holdBtn.style.display = 'block'
+  tour1.style.display = 'inline-block'
+  tour2.style.display = 'none'
+  
+})
