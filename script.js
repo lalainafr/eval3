@@ -34,3 +34,17 @@ class Player{
 //Creation d'instance de joueur
 let player1 =  new Player('player1', 'p1', 0, 0)
 let player2 =  new Player('player2', 'p2', 0, 0)
+
+// Class Game 
+class Game {
+  constructor(players, turn){
+    this.players = players
+    this.turn = turn
+  }
+}
+
+// Initialiser la partie avec les 2 joueurs et attribuer le tour du joueur qui va commencer
+let game = new Game(['player1, player2'], 'p1')
+const winPoint = 100
+let roundNb = 0
+let globalNb = 0
