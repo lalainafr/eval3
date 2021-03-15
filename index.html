@@ -18,6 +18,7 @@
     <ion-content class="ion-padding">  
       <div class="wrapper">
         <ion-grid>
+
           <!-- New game -->   
           <ion-row>
             <ion-col size= "12" size-xs>
@@ -26,7 +27,26 @@
               </div>
             </ion-col>
           </ion-row>
-          
+
+          <!-- player1 & player2 -->   
+          <ion-row class="ion-justify-content-between">
+            <ion-col size = "4" size-xs>
+              <div class="ion-text-center">
+                <p id="player1">PLAYER1 &nbsp<span ><i id="tour1" class="fas fa-baseball-ball"></i></span></p> 
+              </div>
+            </ion-col>
+            <ion-col size= "4" size-xs>
+              <div class="ion-text-center">
+                <p  id="textDisplay"></p>
+              </div>
+            </ion-col>
+            <ion-col size= "4" size-xs>
+              <div class="ion-text-center">
+                <p id="player2"> PLAYER2 &nbsp<span ><i id="tour2" class="fas fa-baseball-ball"></i></span>  </p>
+              </div>
+            </ion-col>
+          </ion-row>
+
         </ion-grid>
       </div>
     </ion-content>   
