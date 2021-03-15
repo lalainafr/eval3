@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+*{
+  color: rgb(168, 161, 161);
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  
+}
+
+.wrapper{
+  background-image: url("image/background.jpg");
+  background-position: center;
+  border: 4mm ridge rgba(179, 119, 41, 0.6);
+  max-width: 980px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#p2GlobalScore, #p1GlobalScore{
+  font-size:2.2rem;
+  color: rgba(217, 65, 42,0.6);
+}
+
+#newGame{
+  color: rgb(180, 175, 175);
+  
+}
+
+#tour1, #tour2{
+  color: rgba(217, 65, 42, 0.6);
+  font-weight: bold;
+  font-size: 0.8EM;
+  
+}
+
+.p1{
+  display: inline-block
+}
+
+.current{
+  font-size: 0.7rem;
+}
+
+#tour{
+  color: rgba(217, 65, 42,0.6);}
+
+#diceColor{
+  color: rgb(168, 141, 136); 
+  font-size: 5rem;
+}
+
+#newLogo, #holdLogo, #rollDiceLogo{
+  color: rgba(217, 65, 42,0.6);
+  font-size: 0.6em
+}
+
+.current{
+  background-color:rgb(217, 65, 42, 0.9);
+  height: 80px;
+  padding-top: 15px;
+  color: black;
+}
+
+#player1, #player2{
+  font-size: 1.2em;
+}
