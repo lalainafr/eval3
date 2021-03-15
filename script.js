@@ -20,3 +20,17 @@ tour1.style.display = 'none'
 tour2.style.display = 'none'
 rollDiceBtn.style.display = 'none'
 holdBtn.style.display = 'none'
+
+// Class Player
+class Player{
+  constructor(name, turn, roundNb, globalNb){
+    this.name =  name
+    this.turn = turn
+    this.roundNb = 0
+    this.globalNb = 0
+  }
+}
+
+//Creation d'instance de joueur
+let player1 =  new Player('player1', 'p1', 0, 0)
+let player2 =  new Player('player2', 'p2', 0, 0)
