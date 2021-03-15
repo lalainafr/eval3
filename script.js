@@ -29,6 +29,38 @@ class Player{
     this.roundNb = 0
     this.globalNb = 0
   }
+
+  randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  rollDice(){
+    let oneSixRandom = this.randomNumber(1, 6)
+
+    while(oneSixRandom === 1){
+      if(game.turn === 'p1'){
+        game.turn = 'p2'
+        tour2.style.display  = 'inline-block'
+        tour1.style.display = 'none'
+        player1.roundNb = 0
+        return player1.roundNb
+      } else if (game.turn = 'p2'){
+        game.turn = 'p1'
+        tour1.style.display  = 'inline-block'
+        tour2.style.display = 'none'
+        player2.roundNb = 0
+        return player1.roundNb
+      }
+    }
+
+    if(game.turn === 'p1'){
+      player1.roundNb += oneSixRandom
+      return player1.roundNb
+    } else {
+      player2.roundNb += oneSixRandom
+      return player2.roundNb
+    }
+  }
 }
 
 //Creation d'instance de joueur
@@ -64,4 +96,14 @@ newGameBtn.addEventListener('click',()=>{
   tour1.style.display = 'inline-block'
   tour2.style.display = 'none'
   
+})
+
+
+// Lancer le dé
+rollDiceBtn.addEventListener('click', ()=>{
+  if(game.turn === 'p1'){
+    p1RoundScore.innerHTML = (`<p>${player1.rollDice()}</p>`)
+  } else if(game.turn === 'p2'){
+    p2RoundScore.innerHTML = (`<p>${player2.rollDice()}</p>`)
+  }
 })
