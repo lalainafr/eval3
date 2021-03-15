@@ -126,7 +126,11 @@ newGameBtn.addEventListener('click',()=>{
   holdBtn.style.display = 'block'
   tour1.style.display = 'inline-block'
   tour2.style.display = 'none'
-  
+  p1GlobalScore.textContent = 0
+  p1RoundScore.innerHTML = `<p>0</p>`
+  p2GlobalScore.textContent = 0
+  p2RoundScore.innerHTML = `<p>0</p>`
+  textDisplay.innerText = ''  
 })
 
 
@@ -143,17 +147,38 @@ rollDiceBtn.addEventListener('click', ()=>{
 holdBtn.addEventListener('click', ()=>{
   if (game.turn === 'p1'){
     p1GlobalScore.innerText =(`${player1.hold()}`)
-    player1.roundNb = 0
-    p1RoundScore.innerHTML = `<p>0</p>`
-    game.turn = 'p2'
-    tour1.style.display = 'none'
-    tour2.style.display = 'inline-block'
+    if (player1.globalNb < winPoint){
+      player1.roundNb = 0
+      p1RoundScore.innerHTML = `<p>0</p>`
+      game.turn = 'p2'
+      tour1.style.display = 'none'
+      tour2.style.display = 'inline-block'
+    }
+    winnerPlayer()
   } else if (game.turn === 'p2'){
     p2GlobalScore.innerText =(`${player2.hold()}`)
-    player2.roundNb = 0
-    p2RoundScore.innerHTML = `<p>0</p>`
-    game.turn = 'p1'
-    tour2.style.display = 'none'
-    tour1.style.display = 'inline-block'
+    if (player2.globalNb < winPoint){
+      player2.roundNb = 0
+      p2RoundScore.innerHTML = `<p>0</p>`
+      game.turn = 'p1'
+      tour2.style.display = 'none'
+      tour1.style.display = 'inline-block'
+    }
+    winnerPlayer()
   }
 })
+
+// Le joueur gagnant
+function winnerPlayer(){
+  if (player1.globalNb >= winPoint){
+    textDisplay.textContent = (`PLAYER 1 a gagné avec un score de: ${player1.globalNb}`)
+    rollDiceBtn.style.display = 'none'
+    holdBtn.style.display = 'none'
+    return 
+  } else if (player2.globalNb >= winPoint){
+    textDisplay.textContent = (`PLAYER 2 a gagné avec un score de: ${player2.globalNb}`)
+    rollDiceBtn.style.display = 'none'
+    holdBtn.style.display = 'none'
+    return 
+  }
+  }
