@@ -35,9 +35,30 @@ class Player{
   }
 
   rollDice(){
-    let oneSixRandom = this.randomNumber(1, 6)
+    let oneToSixRandom = this.randomNumber(1, 6)
 
-    while(oneSixRandom === 1){
+    // Les 6 faces d'un dé
+    switch(oneToSixRandom) {
+      case 1:
+        dice.innerHTML = `<i id = "diceColor" class="fas fa-dice-one fa-3x"></i>`
+        break;  
+      case 2:
+        dice.innerHTML = `<i id = "diceColor" class="fas fa-dice-two fa-3x"></i>`
+        break; 
+      case 3:
+        dice.innerHTML = `<i id = "diceColor" class="fas fa-dice-three fa-3x"></i>`
+        break;   
+      case 4:
+        dice.innerHTML = `<i id = "diceColor" class="fas fa-dice-four fa-3x"></i>`
+        break;
+      case 5:
+        dice.innerHTML = `<i id = "diceColor" class="fas fa-dice-five fa-3x"></i>`
+        break;  
+      case 6:
+        dice.innerHTML = `<i id = "diceColor" class="fas fa-dice-six fa-3x"></i>`
+    }
+
+    while(oneToSixRandom === 1){
       if(game.turn === 'p1'){
         game.turn = 'p2'
         tour2.style.display  = 'inline-block'
@@ -54,10 +75,10 @@ class Player{
     }
 
     if(game.turn === 'p1'){
-      player1.roundNb += oneSixRandom
+      player1.roundNb += oneToSixRandom
       return player1.roundNb
     } else {
-      player2.roundNb += oneSixRandom
+      player2.roundNb += oneToSixRandom
       return player2.roundNb
     }
   }
