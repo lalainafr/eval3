@@ -11,3 +11,12 @@ let p2RoundScore = document.getElementById('p2RoundScore')
 let rollDiceBtn = document.getElementById('rollDice')
 let holdBtn = document.getElementById('hold')
 
+//Cacher les elements suivants et les faire apparaitre quand le joueur veut commencer ou recommencer à jouer
+p1GlobalScore.style.display = 'none'
+p2GlobalScore.style.display = 'none'
+p1RoundScore.style.display = 'none'
+p2RoundScore.style.display = 'none'
+tour1.style.display = 'none'
+tour2.style.display = 'none'
+rollDiceBtn.style.display = 'none'
+holdBtn.style.display = 'none'
