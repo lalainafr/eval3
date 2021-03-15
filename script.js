@@ -82,6 +82,16 @@ class Player{
       return player2.roundNb
     }
   }
+
+  hold(){
+    if (game.turn === 'p1') {
+      player1.globalNb += player1.roundNb
+      return player1.globalNb 
+    } else {
+      player2.globalNb += player2.roundNb
+      return player2.globalNb 
+    }
+  }
 }
 
 //Creation d'instance de joueur
@@ -126,5 +136,24 @@ rollDiceBtn.addEventListener('click', ()=>{
     p1RoundScore.innerHTML = (`<p>${player1.rollDice()}</p>`)
   } else if(game.turn === 'p2'){
     p2RoundScore.innerHTML = (`<p>${player2.rollDice()}</p>`)
+  }
+})
+
+// Rapatrier le score 'round' dans le score 'global'
+holdBtn.addEventListener('click', ()=>{
+  if (game.turn === 'p1'){
+    p1GlobalScore.innerText =(`${player1.hold()}`)
+    player1.roundNb = 0
+    p1RoundScore.innerHTML = `<p>0</p>`
+    game.turn = 'p2'
+    tour1.style.display = 'none'
+    tour2.style.display = 'inline-block'
+  } else if (game.turn === 'p2'){
+    p2GlobalScore.innerText =(`${player2.hold()}`)
+    player2.roundNb = 0
+    p2RoundScore.innerHTML = `<p>0</p>`
+    game.turn = 'p1'
+    tour2.style.display = 'none'
+    tour1.style.display = 'inline-block'
   }
 })
