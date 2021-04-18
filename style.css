@@ -17,7 +17,7 @@
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 50vh;
-  translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #p2GlobalScore, #p1GlobalScore{
